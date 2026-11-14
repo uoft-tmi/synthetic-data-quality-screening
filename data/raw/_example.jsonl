@@ -1,0 +1,3 @@
+{"id": "example-0001", "instruction": "Explain what overfitting is in one sentence.", "input": "", "output": "Overfitting is when a model memorizes its training data, including noise, so it does poorly on new data.", "meta": {"generator": "example"}}
+{"id": "example-0002", "instruction": "Summarize the text.", "input": "A loss function measures how far a model's predictions are from the true values.", "output": "A loss function measures the gap between predictions and the truth.", "meta": {"generator": "example"}}
+{"id": "example-0003", "instruction": "Name two types of machine learning.", "input": "", "output": "Supervised learning and unsupervised learning.", "meta": {"generator": "example"}}

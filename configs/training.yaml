@@ -1,0 +1,14 @@
+# Shared fine-tuning settings. Everyone trains with these exact values.
+# These are placeholder defaults for the team to confirm, and the model is not chosen yet.
+
+base_model: TODO          # the one open-weight model everyone fine-tunes
+method: lora              # LoRA keeps fine-tuning cheap
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+learning_rate: 0.0002
+epochs: 3
+batch_size: 8
+max_seq_length: 1024
+seed: 42

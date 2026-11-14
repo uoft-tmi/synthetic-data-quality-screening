@@ -1,0 +1,18 @@
+### Step 1: generate new instructions
+### Fill in the {seed instruction} lines with randomly sampled seed instructions each round.
+
+Come up with 8 new, diverse task instructions.
+Vary the topics. Each task must be clear and doable by an LLM.
+Do not copy the examples below.
+
+Task 1: {seed instruction}
+Task 2: {seed instruction}
+Task 3: {seed instruction}
+Task 4:
+
+### Step 2: write an input and output for each new instruction
+
+Instruction: {new instruction}
+Write an input if needed, then a high-quality output.
+Input:
+Output:

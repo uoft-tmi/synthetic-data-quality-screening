@@ -1,0 +1,11 @@
+# Needed for the config files
+pyyaml>=6.0
+tqdm>=4.66
+
+# Add these once the team has chosen a model and training setup:
+# torch
+# transformers
+# peft
+# trl
+# datasets
+# openai          # or whichever API the generator / judge uses

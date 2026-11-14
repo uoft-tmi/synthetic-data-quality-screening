@@ -1,0 +1,19 @@
+### Depth: make an instruction harder
+
+Act as a Prompt Rewriter.
+Rewrite the prompt below into a more complex version.
+Keep it reasonable and answerable by a person.
+Do one of: add a constraint, require deeper reasoning,
+or replace a general concept with a specific one.
+#Given Prompt#: {instruction}
+#Rewritten Prompt#:
+
+### Breadth: create a new, rarer instruction
+
+Write a brand-new prompt in the same domain as the one below.
+Make it rarer and more unusual, but still answerable.
+#Given Prompt#: {instruction}
+#New Prompt#:
+
+### Run a few rounds, feeding each output back in as the next {instruction}.
+### Then have a model answer each final instruction to get the output.
