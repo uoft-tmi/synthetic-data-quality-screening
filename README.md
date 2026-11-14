@@ -1,4 +1,4 @@
-# synthetic-data-quality-screening
+# Synthetic Data Quality Screening for Training
 
 ## Overview
 
