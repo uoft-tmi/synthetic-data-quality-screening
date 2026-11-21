@@ -50,7 +50,7 @@ synthetic-data-quality-screening/
 ## Getting started
 
 1. Clone the repo and install the requirements: `pip install -r requirements.txt`
-2. Follow [docs/synthetic-data-generation.md](docs/synthetic-data-generation.md) to generate your dataset. Your API key is provided by the team lead.
+2. Follow [docs/synthetic-data-generation.md](docs/synthetic-data-generation.md) to generate your dataset. Join the team's OpenAI project (the team lead sends the invite) and create your own API key there.
 3. Check your data: `python -m src.validate data/raw/yourname.jsonl` and then `python -m src.check_data data/raw/yourname.jsonl`
 4. Apply your filtering method and compare results with the team.
 
