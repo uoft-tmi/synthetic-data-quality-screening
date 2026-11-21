@@ -1,10 +1,11 @@
 # Shared settings for generating synthetic data.
 # Everyone should use the same values so the comparison stays fair.
-# Values marked TODO are placeholders for the team to decide.
+# The generation notebook (notebooks/batch_data_generator.ipynb) has matching settings in its
+# Section 2 (MODEL, METHOD) and Section 6 (TOTAL_EXAMPLES). Keep them in step with this file.
 
 method: self_instruct                      # self_instruct | evol_instruct | magpie
 prompt_template: prompts/self_instruct.txt
-generator_model: TODO                      # the same generator model for everyone
-temperature: 0.8
+generator_model: gpt-6-luna                # the same generator model for everyone (confirm with the team lead)
+temperature: default                       # the notebook uses the API's default settings
 num_examples: 1000                         # per team member
-seed: 42
+seed: none                                 # the API does not guarantee reproducible output

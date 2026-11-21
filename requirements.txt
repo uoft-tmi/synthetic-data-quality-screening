@@ -1,6 +1,10 @@
-# Needed for the config files
+# Core (config files, progress bars)
 pyyaml>=6.0
 tqdm>=4.66
+
+# Data generation notebook (notebooks/batch_data_generator.ipynb)
+openai>=1.66        # needs the Responses API and the Batch API
+ipykernel           # lets VS Code run the notebook
 
 # Add these once the team has chosen a model and training setup:
 # torch
@@ -8,4 +12,3 @@ tqdm>=4.66
 # peft
 # trl
 # datasets
-# openai          # or whichever API the generator / judge uses

@@ -16,6 +16,60 @@ Every team member runs the same pipeline and changes only the filtering step, so
 4. **Evaluate** the model
 5. **Compare** the methods
 
+## Repository structure
+
+```
+synthetic-data-quality-screening/
+├── README.md
+├── requirements.txt
+├── configs/
+│   ├── generation.yaml        # shared settings for data generation
+│   └── training.yaml          # shared settings for fine-tuning
+├── docs/
+│   └── synthetic-data-generation.md   # step-by-step guide for making your dataset
+├── notebooks/
+│   └── batch_data_generator.ipynb     # generates your dataset with the OpenAI Batch API
+├── prompts/                   # prompt templates for each generation method
+├── data/
+│   ├── raw/                   # one file per team member: data/raw/yourname.jsonl
+│   ├── filtered/              # output of the filtering methods
+│   └── eval/                  # shared test set (kept separate from generated data)
+├── src/
+│   ├── io_utils.py            # read and write JSONL
+│   ├── validate.py            # format check
+│   ├── check_data.py          # full standard check before you commit
+│   ├── prepare_chat_data.py   # turns text pasted from a chat window into JSONL
+│   ├── filter_data.py         # runs a filtering method
+│   ├── filters/               # one module per filtering method
+│   ├── train.py               # fine-tuning (skeleton)
+│   └── evaluate.py            # evaluation (skeleton)
+├── tests/
+└── results/
+```
+
+## Getting started
+
+1. Clone the repo and install the requirements: `pip install -r requirements.txt`
+2. Follow [docs/synthetic-data-generation.md](docs/synthetic-data-generation.md) to generate your dataset. Your API key is provided by the team lead.
+3. Check your data: `python -m src.validate data/raw/yourname.jsonl` and then `python -m src.check_data data/raw/yourname.jsonl`
+4. Apply your filtering method and compare results with the team.
+
+All data uses one JSONL format: `id`, `instruction` and `output` are required, and `input` and `meta` are optional.
+
+## Submitting your data
+
+Put your dataset in **`data/raw/`** as **`data/raw/yourname.jsonl`** (one file per person, lowercase name, no spaces). Push it to your own branch and open a pull request. Do not push to `main` directly, and do not put data anywhere else.
+
+```bash
+git checkout -b yourname/data
+git add data/raw/yourname.jsonl
+git status                      # check that only your .jsonl file is staged, and no keys or data/work files
+git commit -m "Add yourname synthetic data"
+git push -u origin yourname/data
+```
+
+Then open a pull request into `main` on GitHub. Run `python -m src.validate` and `python -m src.check_data` on your file first (see [the guide](docs/synthetic-data-generation.md#9-save-and-check-your-file)). Filtered data goes in `data/filtered/` and results in `results/`, using the same branch-and-pull-request flow.
+
 ## Filtering methods
 
 | # | Method | Core idea | Example papers |
